@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>63</title>
+</head>
+<body>
+  <script>
+    function createOAuthString(host, clientId, scope) {
+        return `${host}/login/oauth/authorize?client_id=${clientId}&scope=${scope}`
+      }
+      function clientId() {
+        const id = prompt('Введите свой clientId', 'WTFMontag');
+        if (id.trim() == '')
+          return `WTFMontag`;
+        return id;
+      }
+      console.log(`Динамический URL: ${createOAuthString('https://github.com', clientId(), 'repo,user')}`);
+  </script>
+</body>
+</html>
